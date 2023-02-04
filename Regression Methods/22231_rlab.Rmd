@@ -1,0 +1,231 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+title: "R Programs"
+Date: 4 Feb 2023
+Name: K Lalith Aditya
+Class: Msc 1st Year
+Semester: 2
+
+Regd No: 22231
+
+
+## Vectors
+
+```{r}
+abd<-c("hello","world")
+print(abd)
+```
+
+### concatenating two vectors
+
+```{r}
+xa<-c('sai')
+xb<-c('ram')
+cat(xa,xb)
+```
+
+### Operations on vectors
+
+```{r}
+#adding corresponding elements in two vectors
+a<-c(1,2,3)
+b<-c(4,5,6)
+c<-a+b
+print(c)
+```
+
+class
+
+```{r}
+#class of c 
+print(class(c))
+```
+
+Multiplication
+
+```{r}
+#multiplying corresponding elements in two vectors
+a<-c(1,2,3)
+b<-c(4,5,6)
+c<-a*b
+c
+```
+
+Subtraction
+
+```{r}
+#subtracting corresponding elements in two vectors
+a<-c(1,2,3)
+b<-c(4,5,6)
+c<-a-b
+c
+```
+
+Division
+
+```{r}
+#dividing corresponding elements in two vectors
+a<-c(1,2,3)
+b<-c(4,5,6)
+c<-a/b
+c
+```
+
+## Lists
+
+```{r}
+mysub<-list(c("regression","multivariate","machine learning","big data","data engineering"))
+print(mysub)
+print(class(mysub))
+```
+
+Appending two lists
+
+```{r}
+a<-list(1,2,3)
+b<-list(5,6,7)
+z<-append(a,b)
+z
+```
+
+## Matrices
+
+```{r}
+#Creating a Matrix of class seating
+bench<-matrix(c('aditya','kumar reddy','satya sai','vamsee','hemanth','lalith','pavan','mathura','saideva','varanasi','aharneish','anirudh','srihari','swaroop'),nrow=2,ncol = 7,byrow=TRUE)
+print(bench)
+```
+
+Taking by row = False or default taking as by column
+
+```{r}
+bench<-matrix(c('aditya','kumar reddy','satya sai','vamsee','hemanth','lalith','pavan','mathura','saideva','varanasi','aharneish','anirudh','srihari','swaroop'),nrow=2,ncol = 7,byrow = FALSE)
+print(bench)
+```
+
+## Arrays
+
+```{r}
+#printing array elements
+a <- array(c("o","x"),dim=c(1,2))
+i<-0
+
+while(i<=5){
+  print(a)
+  i<-i+1
+}
+
+
+```
+
+## Factors
+
+```{r}
+#Taking Cars types
+
+cars<-c('tata','suzuki','maruti','suzuki','tata','benz','toyota')
+factor_cars<- factor(cars)
+
+print(factor_cars)
+print("   ")
+print(class(factor_cars))
+
+print(nlevels(factor_cars))
+```
+
+## DataFrames
+
+```{r}
+sports_perf<-data.frame(
+  name=c('aditya','kumar','satya','vamsee','hemanth'),
+  height_cm=c(170,169,175,169.5,173),
+  weight_kg=c(75,89,66,89,77),
+  age_yrs=c(22,21,22,21,22),
+  hund_mtr_sec=c(12,9,10,14,13),
+  four_hundr_sec=c(40,37,42,39,36)
+)
+print(sports_perf)
+```
+
+To know what all variables are present
+
+```{r}
+ls()
+```
+
+Deleting Variables
+
+```{r}
+print("Before Deleting:")
+new_var<-'I am new Variable'
+ls()
+print("After Deleting:")
+rm(new_var)
+ls()
+
+
+
+```
+
+In the above code the variable new_var got deleted
+
+## Basic Arithmetic Operations 
+
+```{r}
+a<-2
+b<-3
+
+
+sprintf("Add:- %d",a+b)
+sprintf("sub:- %d",a-b)
+sprintf("mul:- %d",a*b)
+sprintf("div:- %f",b/a)
+sprintf("power:- %d",a^b)
+sprintf("modulus:- %d",a%%b)
+sprintf("Integer Division:- %d",a%/%b)
+```
+
+## Comparison Operations
+
+Equality condition
+
+```{r}
+a<-6
+b<-6
+if(a==b){
+  print("both variables are equal")
+}else{
+  print("both variables are not equal")
+}
+  
+```
+
+Not Equal
+
+```{r}
+a<-7
+b<-6
+if(a!=b){
+  print("both variables are not equal")
+}else{
+  print("both variables are equal")
+}
+```
+
+```{r}
+a<-6
+b<-7
+if(a>=6){
+  print(a)
+}
+if(a<b){
+  print("b is less than a")
+}
+if(b>=7){
+  print(TRUE)
+}
+```
