@@ -1,0 +1,178 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+## Title: "R Programs"
+## Date: 8 Feb 2023
+## Name: K Lalith Aditya
+## Class: Msc 1st Year
+## Semester: 2
+## Regd No: 22231
+
+
+```{r}
+# Add two vectors
+
+v <- c( .2,905.5,996) 
+t <- c(87, 30, 409)
+print(v+t)
+```
+Multiply two vectors
+```{r}
+p<- c(24,25.56,26)
+q<- c(38,47,64)
+print(p*q)
+```
+
+Subtract 2nd vector from the first
+```{r}
+v <- c(1.2,85.5,5.6,45) 
+t <- c(.8, 7.3, 3.4,99)
+print(v-t)
+
+```
+Divide the first vector with the 2nd vector
+```{r}
+p<-c(18,51.51,7,6)
+q<-c(18,31,41,5)
+print(p/q)
+```
+Remainder of the first vector with the second 
+```{r}
+v <- c( 12,15.5,26,61) 
+w<- c(8.99, 3.56, 4.999,34)
+print(v%%w)  
+
+```
+Division of first vector with the second
+```{r}
+v <- c(12,57,6.87,1)
+w<- c(81, 3.99, 4.98,90) 
+print(v%/%w)
+```
+Colon operator:
+```{r}
+s <- 1:16 
+print(s)
+
+```
+
+%in% operator:
+This is used to identify an element in the vector
+
+```{r}
+a<-5
+b<-11
+list<-1:10
+if(a %in% list){
+print("a is present in the list")
+}else
+{
+print("a is not present in the list")
+}
+if(b %in% list){
+print("b is present in the list")
+}else
+{
+print("b is not present in the list")
+}
+```
+%*%   This operator is used to multiply a matrix
+```{r}
+M = matrix(c(2,0,2,0),nrow = 2,ncol = 2,byrow = TRUE)
+Msquare = M%*%M
+print(Msquare)
+```
+# Control Structures
+if statement
+```{r}
+z<- -1L
+if(is.integer(z)){
+  print("Yes z is an integer")
+}
+```
+if,else if, else statements
+```{r}
+z<-"str"
+if(typeof(z)==typeof("lol"))
+{
+  print("z is a character")
+}else if(typeof(z)==typeof(3))
+{
+  print("z is an integer")
+}else{
+  print("z is neither an integer nor a character")
+}
+```
+
+# Loops
+while loops
+```{r}
+a<-10
+while(a>=1){
+  print(a)
+  a<-a-1
+}
+```
+Repeat Loop
+```{r}
+count<-0
+repeat{
+  count<-count+1
+  if(count==10){
+    print("count is 10")
+    break
+  }
+}
+```
+R For Loop
+```{r}
+x<- 10:12
+for(v in x){
+  print(v)
+}
+```
+```{r}
+v <- letters[1:4]
+print(v)
+for(z in v)
+{ 
+  print(z) 
+}
+
+```
+next and break statement
+
+```{r}
+elements<-list("a","b","c","d","e","f")
+for(i in elements){
+  if(i == "b"){
+    next
+  }
+  if(i == "f"){
+    break
+  }
+  print(i)
+}
+```
+
+```{r}
+mtcars
+head(mtcars)
+
+```
+scatter plot mpg(mileage) Vs hp(horse power)
+```{r}
+plot(mtcars$mpg, mtcars$hp,
+     col='violet',
+     main='Scatterplot',
+     xlab='mpg',
+     ylab='hp',
+     pch=20)
+abline(lm(mtcars$hp ~ mtcars$mpg, data = mtcars), col = "blue")
+```
+```{r}
+corr<-cor(mtcars$mpg, mtcars$hp)
+sprintf("The co-relation between the features is %f",corr)
+```
